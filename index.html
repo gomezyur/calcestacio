@@ -1,0 +1,77 @@
+<!DOCYTPE HTML>
+<html lang="pt-br" ng-app="calc">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-sacale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	    
+	
+	<script src="js/jquery-1.12.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    
+    <script src="js/angular.min.js"></script>
+	<script src="js/app.js"></script>
+	
+     
+    
+		<title></title>
+</head>
+<body ng-controller="myController as myCom">
+	
+    <div class="page-header">
+	  <h1 style="text-align: center;">Calc <small>Estácio FAP</small></h1>
+	</div>
+	<div class="panel panel-primary">
+		<div class="panel-heading">Semestral</div>
+  		<div class="panel-body">
+			<form role="form" id="notas">
+			  	<div class="form-group">
+			    	<label for="cantInp">Av1</label>
+			    	<input type="number" name="av1" class="form-control" id="av1" ng-model="av1" ng-disabled="{{}}">
+			  	</div>
+
+			  	<div class="form-group">
+			    	<label for="costInp">Av2</label>
+			    	<input type="number" name="av2" class="form-control" id="av2" ng-model="av2" >
+			  	</div>
+			  	<div class="form-group" ng-hide="{{esconder}}">
+			    	<label for="costInp">Av3</label>
+
+			    	<input type="number" name="av3" class="form-control" id="av3" ng-model="av3" >
+			  	</div>
+                {{esconder}}
+
+                 <!-- Modal show-->
+                
+            <div class="container">
+              
+
+              <button ng-click="toggleModal(); media();" class="btn btn-default">Calcular</button>
+              <button ng-click="reset();" class="btn btn-default pull-right">Recalcular</button>
+              <modal title="Resultado" visible="showModal">
+                <form role="form">
+                    
+                    <div class="form-group">
+			    	<h3><b>Média:</b> <span class="label label-primary">{{caso1}}</span><br></h3><br>
+			    	<span class="{{classe}}">{{resultado}}</span><br>
+			    	<img src="{{result}}" style="width: 50%; margin-left: 25%;">
+			    	
+                </div>
+                </form>
+              </modal>
+            </div> <!-- end of modal show-->
+              
+        </div> 
+                               
+   			
+                <!-- 
+                <button type="button" class="btn btn-default pull-right" ng-click="toggleModal()">Calular</button>-->
+                
+			</form>
+        
+            
+    	</div>
+	</div>
+</body>
+</html>
